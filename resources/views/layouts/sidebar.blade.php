@@ -25,7 +25,7 @@
             </div>
             <ul class="nav nav-primary">
                 <li class="nav-item {{ request()->is('dashboard*') ? 'active' : '' }}">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="">
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>
                     </a>
