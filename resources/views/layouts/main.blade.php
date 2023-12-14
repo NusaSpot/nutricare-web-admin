@@ -3,9 +3,9 @@
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Nusa Spot Admin</title>
+    <title>NutriCare Admin</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="{{ asset('atlantis/assets/img/icon.ico') }}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ asset('assets/img/nutricare.png') }}" type="image/x-icon">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="{{ asset('atlantis/assets/js/plugin/webfont/webfont.min.js') }}"></script>
     <script>
@@ -34,7 +34,7 @@
         <div class="main-header">
             <div class="logo-header" data-background-color="blue">
                 <a href="" class="logo">
-                    <p class="navbar-brand text-light">Nusa Spot Admin</p>
+                    <p class="navbar-brand text-light">Nutricare Admin</p>
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse"
                     data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">

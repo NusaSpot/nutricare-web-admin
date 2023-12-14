@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Aplikasi Barang</title>
+    <title>NutriCare Admin</title>
+    <link rel="shortcut icon" href="{{ asset('assets/img/nutricare.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('template/vendors/feather/feather.css') }}">
     <link rel="stylesheet" href="{{ asset('template/vendors/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('template/vendors/ti-icons/css/themify-icons.css') }}">
@@ -21,14 +21,17 @@
             <div class="content-wrapper d-flex align-items-center auth px-0">
                 <div class="row w-100 mx-0">
                     <div class="col-lg-4 mx-auto">
-                        <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+                        <div class="auth-form-light text-left py-5 px-4 px-sm-5 rounded">
                             @if (Session::get('success') != '')
                                 <div class='alert alert-success'>
                                     <center><b>{{ Session::get('success') }}</b></center>
                                 </div>
                             @endif
-                            <h4>Halo Admin NusaSpot, Selamat Datang !</h4>
-                            <h6 class="fw-light mb-4">Masuk untuk melanjutkan</h6>
+                            <center class="mb-4">
+                                <img src="{{ asset('assets/img/nutricare.png') }}" width="100px" class="mb-4">
+                                <h4>Halo Admin NutriCare, Selamat Datang !</h4>
+                                <h6 class="fw-light mb-4">Masuk untuk melanjutkan</h6>
+                            </center>
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
                                 <div class="form-group">
