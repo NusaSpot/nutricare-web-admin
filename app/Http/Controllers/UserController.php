@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $data['users'] = User::all();
+        $data['users'] = User::where('is_guest', 0)->get();
         return view('user.index', $data);
     }
 

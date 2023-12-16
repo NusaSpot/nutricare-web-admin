@@ -13,7 +13,7 @@
                 <li class="separator">
                     <i class="flaticon-right-arrow"></i>
                 </li>
-            <li class="nav-item">
+                <li class="nav-item">
                     <a href="#">Admin</a>
                 </li>
             </ul>
@@ -22,10 +22,10 @@
             <div class="card-header">
                 <h4 class="card-title">
                     Data Admin
-                    &nbsp;
+                    {{-- &nbsp;
                     <button title="Tambah" class="btn btn-icon btn-round btn-primary btn-sm" data-toggle="modal" data-target="#tambahAdmin">
                         <i class="fa fa-plus"></i>
-                    </button>
+                    </button> --}}
                 </h4>
             </div>
             <div class="card-body">

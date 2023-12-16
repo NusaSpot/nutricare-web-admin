@@ -54,6 +54,11 @@
                                     <span class="sub-item">User</span>
                                 </a>
                             </li>
+                            <li class="{{ request()->is('user*') ? 'active' : '' }}">
+                                <a href="{{route('user.index')}}">
+                                    <span class="sub-item">Ahli Gizi</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </li>
