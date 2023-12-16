@@ -47,7 +47,7 @@
                             <tr>
                                 <td>{{ ++$key }}</td>
                                 <td>{{ $row->title }}</td>
-                                <td><img src="{{ $row->image }}" alt="Gambar Resep" width="50%"></td>
+                                <td><img src="{{ $row->image }}" alt="Gambar Resep" width="30%"></td>
                                 <td>
                                     <button title="Ubah" class="btn btn-icon btn-round btn-warning btn-sm" data-toggle="modal" data-target="#editResep" data-id="{{ $row->id }}" data-title="{{ $row->title }}" data-category="{{ $row->category }}" data-ingredients="{{ $row->ingredients }}" data-tutorials="{{ $row->tutorials }}">
                                         <i class="fa fa-pen-square"></i>
