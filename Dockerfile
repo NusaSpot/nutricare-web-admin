@@ -46,6 +46,7 @@ RUN docker-php-ext-install \
     xsl \
     gd
 
+RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg
 # Install nginx and other dependencies
 RUN apk add --no-cache nginx wget
 
