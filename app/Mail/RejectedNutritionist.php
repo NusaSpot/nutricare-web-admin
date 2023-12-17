@@ -23,7 +23,7 @@ class RejectedNutritionist extends Mailable
     public function __construct(Nutritionist $user)
     {
         $this->user = $user;
-        $this->subject = 'MainYuk - {{header}}';
+        $this->subject = 'NutriCare - {{header}}';
     }
 
     /**
