@@ -83,7 +83,7 @@
                                 <div class="col-7 col-stats">
                                     <div class="numbers">
                                         <p class="card-category">Total Ahli Gizi</p>
-                                        {{-- <h4 class="card-title">{{ \App\Models\User::count() }}</h4> --}}
+                                        {{ $total_nutritionist }}
                                     </div>
                                 </div>
                             </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Nutritionist;
 use App\Models\Recipe;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -13,6 +14,7 @@ class HomeController extends Controller
         $data['total_guest'] = User::where('is_guest', 1)->count();
         $data['total_user'] = User::where('is_guest', 0)->count();
         $data['total_recipe'] = Recipe::count();
+        $data['total_nutritionist'] = Nutritionist::where('is_eligible', 'approved')->count();
 
         return view('dashboard', $data);
     }
