@@ -1,27 +1,27 @@
 FROM php:8.1-fpm-alpine
 
+# Install necessary packages
 RUN apk --update --no-cache add \
     nginx \
     wget \
     libpng-dev \
-    libjpeg-dev \
-    libfreetype6-dev \
-    libjpeg62-turbo-dev \
+    libjpeg-turbo-dev \
+    freetype-dev \
     libmcrypt-dev \
-    libgd-dev \
-    jpegoptim optipng pngquant gifsicle \
+    libgd \
+    jpegoptim \
+    optipng \
+    pngquant \
+    gifsicle \
     libonig-dev \
     libxml2-dev \
     unzip \
     zip \
-    sudo \
-    unzip \
-    && docker-php-ext-install zip pdo_mysql
+    sudo
 
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
-
-RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg
-RUN docker-php-ext-install mbstring exif pcntl bcmath gd
+# Install PHP extensions
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install mbstring exif pcntl bcmath gd zip pdo_mysql
 
 # Install nginx and other dependencies
 RUN apk add --no-cache nginx wget
