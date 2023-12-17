@@ -43,8 +43,9 @@ RUN docker-php-ext-install \
     gettext \
     soap \
     sockets \
-    xsl
-    
+    xsl \
+    gd
+
 # Install nginx and other dependencies
 RUN apk add --no-cache nginx wget
 
