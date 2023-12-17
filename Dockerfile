@@ -1,52 +1,28 @@
 FROM php:8.1-fpm-alpine
 
-RUN apk --update add \
+RUN apk --update --no-cache add \
+    nginx \
     wget \
-    curl \
-    build-base \
-    libmcrypt-dev \
-    libxml2-dev \
-    pcre-dev \
-    zlib-dev \
-    autoconf \
-    oniguruma-dev \
-    openssl \
-    openssl-dev \
-    freetype-dev \
-    libjpeg-turbo-dev \
-    jpeg-dev \
     libpng-dev \
-    imagemagick-dev \
-    imagemagick \
-    postgresql-dev \
-    libzip-dev \
-    gettext-dev \
-    libxslt-dev \
-    libgcrypt-dev &&\
-    rm /var/cache/apk/*
-
-RUN pecl channel-update pecl.php.net && \
-    pecl install mcrypt redis-5.3.7 && \
-    rm -rf /tmp/pear
-
-RUN docker-php-ext-install \
-    mysqli \
-    mbstring \
-    pdo \
-    pdo_mysql \
-    xml \
-    pcntl \
-    bcmath \
-    pdo_pgsql \
+    libjpeg-dev \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libmcrypt-dev \
+    libgd-dev \
+    jpegoptim optipng pngquant gifsicle \
+    libonig-dev \
+    libxml2-dev \
+    unzip \
     zip \
-    intl \
-    gettext \
-    soap \
-    sockets \
-    xsl \
-    gd
+    sudo \
+    unzip \
+    && docker-php-ext-install zip pdo_mysql
+
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg
+RUN docker-php-ext-install mbstring exif pcntl bcmath gd
+
 # Install nginx and other dependencies
 RUN apk add --no-cache nginx wget
 
