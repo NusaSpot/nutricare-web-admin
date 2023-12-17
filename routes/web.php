@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NutritionistController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\UserController;
@@ -47,6 +49,18 @@ Route::middleware('auth')->group(function () {
         Route::post('store', [RecipeController::class, 'store'])->name('store');
         Route::put('update', [RecipeController::class, 'update'])->name('update');
         Route::get('delete/{id}', [RecipeController::class, 'delete'])->name('delete');
+    });
+
+    Route::prefix('nutritionist')->name('nutritionist.')->group(function () {
+        Route::get('', [NutritionistController::class, 'index'])->name('index');
+        Route::put('update', [NutritionistController::class, 'update'])->name('update');
+        Route::get('detail/{id}', [NutritionistController::class, 'detail'])->name('detail');
+        Route::get('delete/{id}', [NutritionistController::class, 'delete'])->name('delete');
+    });
+
+    Route::prefix('activity')->name('activity.')->group(function () {
+        Route::get('', [ActivityController::class, 'index'])->name('index');
+        Route::get('detail/{id}', [ActivityController::class, 'detail'])->name('detail');
     });
 });
 

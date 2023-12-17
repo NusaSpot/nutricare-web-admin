@@ -36,13 +36,13 @@
                     </span>
                     <h4 class="text-section">Pengaturan</h4>
                 </li>
-                <li class="nav-item {{ request()->is('user*') ? 'active submenu' : '' }}  {{ request()->is('admin*') ? 'active submenu' : '' }}">
+                <li class="nav-item {{ request()->is('user*') ? 'active submenu' : '' }}  {{ request()->is('admin*') ? 'active submenu' : '' }} {{ request()->is('nutritionist*') ? 'active submenu' : '' }}">
                     <a data-toggle="collapse" href="#base">
                         <i class="fas fa-users"></i>
                         <p>Akun</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse {{ request()->is('user*') ? 'show' : '' }}  {{ request()->is('admin*') ? 'show' : '' }}" id="base">
+                    <div class="collapse {{ request()->is('user*') ? 'show' : '' }}  {{ request()->is('admin*') ? 'show' : '' }} {{ request()->is('nutritionist*') ? 'show' : '' }}" id="base">
                         <ul class="nav nav-collapse">
                             <li class="{{ request()->is('admin*') ? 'active' : '' }}">
                                 <a href="{{route('admin.index')}}">
@@ -54,8 +54,8 @@
                                     <span class="sub-item">User</span>
                                 </a>
                             </li>
-                            <li class="{{ request()->is('user*') ? 'active' : '' }}">
-                                <a href="{{route('user.index')}}">
+                            <li class="{{ request()->is('nutritionist*') ? 'active' : '' }}">
+                                <a href="{{route('nutritionist.index')}}">
                                     <span class="sub-item">Ahli Gizi</span>
                                 </a>
                             </li>
@@ -66,6 +66,12 @@
                     <a href="{{ route('recipe.index') }}">
                         <i class="fas fa-briefcase"></i>
                         <p>Data Resep</p>
+                    </a>
+                </li>
+                <li class="nav-item {{ request()->is('activity*') ? 'active' : '' }}">
+                    <a href="{{ route('activity.index') }}">
+                        <i class="fas fa-list"></i>
+                        <p>Data Activitas Ahli Gizi</p>
                     </a>
                 </li>
             </ul>
