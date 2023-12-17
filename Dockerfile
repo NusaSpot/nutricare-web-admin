@@ -1,11 +1,50 @@
 FROM php:8.1-fpm-alpine
 
-RUN apk --update --no-cache add \
-    nginx \
+RUN apk --update add \
     wget \
+    curl \
+    build-base \
+    libmcrypt-dev \
+    libxml2-dev \
+    pcre-dev \
+    zlib-dev \
+    autoconf \
+    oniguruma-dev \
+    openssl \
+    openssl-dev \
+    freetype-dev \
+    libjpeg-turbo-dev \
+    jpeg-dev \
+    libpng-dev \
+    imagemagick-dev \
+    imagemagick \
+    postgresql-dev \
     libzip-dev \
-    unzip \
-    && docker-php-ext-install zip pdo_mysql
+    gettext-dev \
+    libxslt-dev \
+    libgcrypt-dev &&\
+    rm /var/cache/apk/*
+
+RUN pecl channel-update pecl.php.net && \
+    pecl install mcrypt redis-5.3.7 && \
+    rm -rf /tmp/pear
+
+RUN docker-php-ext-install \
+    mysqli \
+    mbstring \
+    pdo \
+    pdo_mysql \
+    xml \
+    pcntl \
+    bcmath \
+    pdo_pgsql \
+    zip \
+    intl \
+    gettext \
+    soap \
+    sockets \
+    xsl
+    
 # Install nginx and other dependencies
 RUN apk add --no-cache nginx wget
 
