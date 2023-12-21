@@ -52,9 +52,9 @@
                                     <button title="Ubah" class="btn btn-icon btn-round btn-warning btn-sm" data-toggle="modal" data-target="#editResep" data-id="{{ $row->id }}" data-title="{{ $row->title }}" data-category="{{ $row->category }}" data-ingredients="{{ $row->ingredients }}" data-tutorials="{{ $row->tutorials }}">
                                         <i class="fa fa-pen-square"></i>
                                     </button>
-                                    <a href="{{ route('recipe.delete', $row->id) }}" onclick="return confirm('Apakah anda yakin ?')" class="btn btn-icon btn-round btn-danger btn-sm">
+                                    {{-- <a href="{{ route('recipe.delete', $row->id) }}" onclick="return confirm('Apakah anda yakin ?')" class="btn btn-icon btn-round btn-danger btn-sm">
                                         <i class="fa fa-trash pt-2"></i>
-                                    </a>
+                                    </a> --}}
                                 </td>
                             </tr>
                             @endforeach
