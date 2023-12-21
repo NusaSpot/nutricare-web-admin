@@ -62,7 +62,7 @@
                                     @if($row->is_eligible != 'not_completed')
                                         <a href="{{ route('nutritionist.detail', $row->id) }}" class="btn btn-primary btn-rounded btn-sm"><i class="fa fa-eye"></i></a>
                                     @endif
-                                    <a href="{{ route('nutritionist.delete', $row->id) }}" class="btn btn-danger btn-rounded btn-sm" onclick="return confirm('Apakah anda yakin ?')"><i class="fa fa-trash"></i></a>
+                                    {{-- <a href="{{ route('nutritionist.delete', $row->id) }}" class="btn btn-danger btn-rounded btn-sm" onclick="return confirm('Apakah anda yakin ?')"><i class="fa fa-trash"></i></a> --}}
                                 </td>
                             </tr>
                             @endforeach
